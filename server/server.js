@@ -10,7 +10,7 @@ const express = require('express');
 
 const app = express();
 
-// app.use(requireHTTPS);
+app.use(requireHTTPS);
 
 app.use(express.static('./dist/giphy-search'));
 
