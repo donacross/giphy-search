@@ -1,0 +1,27 @@
+@import '../styles/abstract/include';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    &.page-search {
+        background-color: red;
+    }
+}
+
+main {
+    @include scrollbar;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    > router-outlet {
+        display: none;
+    }
+
+    > * {
+        flex: 1;
+        height: inherit;
+    }
+}

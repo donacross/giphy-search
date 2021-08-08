@@ -1,0 +1,35 @@
+@import '../../styles/abstract/include';
+
+:host {
+    background-color: $bg-navbar;
+    display: block;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .5rem 1rem;
+    box-sizing: border-box;
+}
+
+.emoji-link {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: text-shadow .1s;
+
+    &:hover {
+        text-shadow: 0 0 5px rgba(white, .5);
+    }
+
+    &.active {
+        text-shadow: 0 0 15px rgba(white, .7);
+    }
+}
+
+navbar-search-input {
+    flex: 1;
+}

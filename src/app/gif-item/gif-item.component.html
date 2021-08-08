@@ -1,0 +1,8 @@
+<figure *ngIf="gif">
+    <img
+        [src]="getSrc(gif)"
+        [alt]="gif.title"
+        [title]="gif.title"
+        loading="lazy"
+    >
+</figure>

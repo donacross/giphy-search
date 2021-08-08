@@ -1,0 +1,57 @@
+@import '../../styles/abstract/include';
+
+$break: 600px;
+
+:host {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    gap: .5rem;
+    padding: .5rem;
+}
+
+.limit {
+    display: flex;
+    gap: .3rem;
+    align-items: baseline;
+    margin-right: 2rem;
+}
+
+.btn-previous,
+.btn-next {
+    font-size: larger;
+    font-weight: bold;
+    padding: .2rem 1rem;
+    border-radius: 5px;
+}
+
+@include screen-below($break) {
+
+    .limit {
+        display: none;
+    }
+
+    .btn-previous {
+        order: 1;
+        margin-right: auto;
+    }
+
+    .page-count {
+        order: 2;
+    }
+
+    .btn-next {
+        order: 3;
+        margin-left: auto;
+    }
+
+    nav {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,13 @@
+$height: 4rem;
+
+:host {
+    display: flex;
+}
+
+input {
+    flex: 1;
+    line-height: $height * 0.6;
+    font-size: $height * 0.4;
+    width: 100%;
+
+}

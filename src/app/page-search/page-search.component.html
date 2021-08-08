@@ -1,0 +1,26 @@
+<ng-container *ngIf="isValidSearch$ | async; else invalid">
+
+    <gif-list [gifs$]="gifs$"></gif-list>
+
+    <gif-pagination [pagination]="pagination$ | async"></gif-pagination>
+
+</ng-container>
+
+<ng-template #invalid>
+
+
+    <div *ngIf="isQueryEmpty$ | async; else errors" class="query-empty">
+        Search for GIFs thanks to the field above.
+
+        <img src="https://media.giphy.com/media/Yiw4aLjpxldhC/giphy.gif" alt="search">
+    </div>
+
+</ng-template>
+
+<ng-template #errors>
+
+    <div class="errors">
+        <div *ngFor="let e of errors$ | async">⚠️ {{ e }}</div>
+    </div>
+
+</ng-template>

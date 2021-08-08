@@ -1,0 +1,36 @@
+<nav
+    role="navigation"
+    aria-label="Pagination"
+    class="contained"
+>
+
+    <div class="limit">
+        <label for="limit">Items per page</label>
+        <select
+            id="limit"
+            [(ngModel)]="limit"
+            (ngModelChange)="onChangeLimit($event)"
+        >
+            <option *ngFor="let v of limitValues" [value]="v">{{ v }}</option>
+        </select>
+    </div>
+
+    <div class="page-count">Page {{ currentPage }} of {{ totalPages }}</div>
+
+    <button
+        class="btn-previous"
+        type="button"
+        title="Previous"
+        (click)="onClickOnPrevious()"
+        [disabled]="currentPage === 1"
+    >❮</button>
+
+    <button
+        class="btn-next"
+        type="button"
+        title="Next"
+        (click)="onClickOnNext()"
+        [disabled]="currentPage === totalPages"
+    >❯</button>
+</nav>
+

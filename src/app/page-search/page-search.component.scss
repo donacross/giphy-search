@@ -1,0 +1,47 @@
+@import '../../styles/abstract/include';
+
+$pagination-height: 3rem;
+
+:host {
+    flex: 1;
+    display: flex;
+    padding-bottom: $pagination-height;
+    overflow: hidden;
+}
+
+gif-list {
+    @include scrollbar;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.query-empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    width: 100%;
+
+    img {
+        display: block;
+        margin: 4rem auto 0;
+        max-width: 100%;
+    }
+}
+
+.errors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+gif-pagination {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: $pagination-height;
+    background-color: $bg-navbar;
+}

@@ -1,0 +1,25 @@
+@import '../../styles/abstract/include';
+
+$column-width: 200px;
+$gap: 8px;
+$max-columns: 5;
+
+:host {
+    display: grid;
+    grid-gap: $gap;
+    padding: $gap;
+    grid-template-columns: 1fr;
+    max-width: $max-columns * $column-width + $gap * 2 + ($max-columns - 1) * $gap;
+    margin-left: auto;
+    margin-right: auto;
+
+    // Create 1 column every ~200px
+    @for $i from 1 through ($max-columns - 1) {
+
+        $break: ($i + 1) * $column-width + $gap * 2 + $gap * ($i - 1);
+
+        @include screen-above($break) {
+            grid-template-columns: repeat(#{$i + 1}, 1fr);
+        }
+    }
+}
